@@ -3,6 +3,11 @@
 ## Overview
 This project compares 6 classification algorithms on 2 datasets using 10-fold cross-validation with enhanced visualization and reporting.
 
+## Dependencies
+- Python 3.8+
+- numpy, pandas, scikit-learn
+- matplotlib, seaborn (for visualizations)
+
 ## Files
 - `Project1.ipynb` - Main notebook with analysis and visualizations
 - `project1_dataset1.txt` - Breast Cancer dataset (568 samples, 30 features)
@@ -13,6 +18,17 @@ This project compares 6 classification algorithms on 2 datasets using 10-fold cr
 pip install -r requirements.txt
 jupyter notebook Project1.ipynb
 ```
+## Running Experiments
+- Modify `DATA_FILES` in the notebook if necessary.
+- Outputs (summary and per-fold predictions) are saved in `classification_outputs/` if `SAVE_RESULTS = True`.
+
+## Algorithm Settings
+- **KNN:** k = 5
+- **Decision Tree:** max depth unrestricted
+- **Naive Bayes:** Gaussian distribution for continuous features
+- **SVM:** RBF kernel, C = 1.0, class_weight = balanced
+- **AdaBoost:** 50 decision stumps (max_depth=1) as base learners
+- **Neural Network:** 1 hidden layer with 100 neurons, ReLU activation, max_iter=400
 
 ## Results Summary
 - **Dataset 1 (Breast Cancer)**: All algorithms achieve F1 > 0.89
